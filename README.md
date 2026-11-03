@@ -38,3 +38,7 @@ The in-memory rate limiter permits 20 requests per minute per IP. For multiple r
 ## Repository
 
 Source is prepared in the connected `Merlinsam-M/Portfolio` checkout. This delivery does not imply a GitHub push or public deployment. The ZIP includes source and lockfile, excludes dependencies, credentials, and Git metadata.
+
+## Vercel
+
+Import this repository into Vercel. `vercel.json` serves `public/` and routes API requests to the Express serverless function. No frontend build command is required. Set `APP_ORIGIN` to the exact final site origin, and set `OPENAI_API_KEY` securely before enabling live AI. The current deployment hostname is accepted by default when APP_ORIGIN is absent. Preview or alias domains require the corresponding APP_ORIGIN setting. Redeploy after changing variables. Rate limits are per serverless instance; configure a shared rate-limit store or Vercel firewall rate limits before enabling a public paid AI endpoint. Without an API key, the public portfolio works and chat reports that configuration is required.
